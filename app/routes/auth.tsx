@@ -1,29 +1,32 @@
-import {usePuterStore} from "~/lib/puter";
-import {useEffect} from "react";
-import {useLocation, useNavigate} from "react-router";
+import { usePuterStore } from "~/lib/puter";
+import { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router";
 
 export const meta = () => ([
-    { title: 'Resumind | Auth' },
-    { name: 'description', content: 'Log into your account' },
+    { title: 'Auth | ResumeAI Pro' },
+    { name: 'description', content: 'Secure access to your professional dashboard.' },
 ])
 
 const Auth = () => {
     const { isLoading, auth } = usePuterStore();
     const location = useLocation();
-    const next = location.search.split('next=')[1];
+    const next = location.search.split('next=')[1] || '/';
     const navigate = useNavigate();
 
     useEffect(() => {
-        if(auth.isAuthenticated) navigate(next);
+        if (auth.isAuthenticated) navigate(next);
     }, [auth.isAuthenticated, next])
 
     return (
-        <main className="bg-[url('/images/bg-auth.svg')] bg-cover min-h-screen flex items-center justify-center">
-            <div className="gradient-border shadow-lg">
-                <section className="flex flex-col gap-8 bg-white rounded-2xl p-10">
-                    <div className="flex flex-col items-center gap-2 text-center">
-                        <h1>Welcome</h1>
-                        <h2>Log In to Continue Your Job Journey</h2>
+        <main className="bg-gradient flex items-center justify-center min-h-screen">
+            <div className="gradient-border shadow-2xl scale-110">
+                <section className="flex flex-col gap-10 bg-white rounded-2xl p-12 items-center">
+                    <div className="w-16 h-16 bg-emerald-600 rounded-2xl flex items-center justify-center shadow-lg shadow-emerald-200">
+                        <span className="text-white font-bold text-3xl">R</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-3 text-center">
+                        <h1 className="text-4xl text-slate-800">Welcome Back</h1>
+                        <h2>Secure access to your insights</h2>
                     </div>
                     <div>
                         {isLoading ? (
