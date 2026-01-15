@@ -1,5 +1,6 @@
 <div align="center">
-  <h3 align="center">AI Resume Analyzer</h3>
+  <h1 align="center">ResumeAI Pro</h1>
+  <h3 align="center"><a href="https://ai-resume-analyzer-lac-nine.vercel.app/">https://ai-resume-analyzer-lac-nine.vercel.app/</a></h3>
 </div>
 
 ## 📋 <a name="table">Table of Contents</a>
